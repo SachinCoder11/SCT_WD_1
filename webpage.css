@@ -1,0 +1,212 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+header.scrolled {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.brand {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.menu-btn {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #ffffff;
+    display: none;
+}
+
+/* Move Navbar to the Left */
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease-in-out;
+}
+
+.navigation-items {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: -100vh; /* Initially hidden */
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    height: 100vh;
+    width: 250px;
+    justify-content: center;
+    align-items: center;
+    transition: top 0.5s ease;
+}
+
+.navigation-items a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 15px;
+    transition: color 0.3s;
+}
+
+.navigation-items a:hover {
+    color: #09a6d4;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin-right: 50px; /* Reduce margin-right to move navbar to the left */
+}
+
+.nav-links li {
+    margin-left: 15px; /* Adjust the space between each nav item */
+}
+
+.navigation.active .navigation-items {
+    top: 0;
+}
+
+a {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 2px solid #ffffff;
+    border-radius: 40px;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.2); /* Slight background color */
+    text-decoration: none;
+    font-size: 1.1rem; /* Slightly larger text for the button */
+    margin-top: 20px; /* Space between button and content */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a:hover {
+    background-color: rgba(0, 0, 0, 0.5); /* Button background on hover */
+    color: #09a6d4; /* Text color on hover */
+    border-color: #09a6d4; /* Border color on hover */
+}
+
+/* Image Slider */
+.img-slide {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.img-slide.active {
+    opacity: 1;
+}
+
+/* Increase Text Size of the Content Over the Image */
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.content.active {
+    opacity: 1;
+}
+
+.content h1 {
+    font-size: 3.5rem; /* Increased font size */
+    font-weight: bold;
+}
+
+.content h1 span {
+    font-size: 2.5rem; /* Increase size of the span as well */
+}
+
+.content p {
+    font-size: 1.5rem; /* Make the paragraph text larger */
+    line-height: 1.6rem; /* Adjust line height for better readability */
+}
+
+.slider-buttons {
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    z-index: 100;
+    pointer-events: none;
+}
+
+.prev-btn,
+.next-btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    pointer-events: all;
+    transition: background-color 0.3s;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    .media-icons {
+        bottom: 30px;
+    }
+
+    .menu-btn {
+        display: block; /* Show menu button in small screens */
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    .navigation.active {
+        display: block;
+    }
+
+    .slider-buttons {
+        bottom: 45%;
+    }
+}
