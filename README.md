@@ -1,4 +1,4 @@
-    -->Responsive Website Landing Page<--
+##    -->Responsive Website Landing Page<--
 - Space
 This is a fully responsive landing page for a fictional space-themed website called Space. The website features a dynamic image slider, engaging content, and smooth hover effects. The design is optimized for both desktop and mobile devices.
 
